@@ -1,0 +1,11 @@
+node_modules/
+dist/
+data/
+services/open-webui/venv/
+*.db
+*.db-wal
+*.db-shm
+.env
+.DS_Store
+Thumbs.db
+.claude/
