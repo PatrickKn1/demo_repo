@@ -694,3 +694,450 @@ html, body {
     font-size: 20px;
     font-weight: 600;
 }
+
+/* ============================================================
+   PANEL TOOLBAR (Calendar Navigation)
+   ============================================================ */
+
+.panel-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
+    gap: 12px;
+    min-height: 44px;
+}
+
+.panel-toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.panel-toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 12px;
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-family: inherit;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.toolbar-btn:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.toolbar-btn.icon-only {
+    padding: 5px 6px;
+}
+
+.toolbar-btn svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.toolbar-date {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+/* View Switcher */
+.view-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 9999px;
+    padding: 2px;
+    gap: 1px;
+}
+
+[data-theme="light"] .view-switcher {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.view-btn {
+    padding: 4px 14px;
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 9999px;
+    transition: background var(--transition-fast), color var(--transition-fast);
+    white-space: nowrap;
+}
+
+.view-btn:hover {
+    color: var(--text-secondary);
+}
+
+.view-btn.active {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--text-primary);
+}
+
+[data-theme="light"] .view-btn.active {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   CALENDAR BODY
+   ============================================================ */
+
+.calendar-body {
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+}
+
+.calendar-loading,
+.calendar-error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+}
+
+.calendar-error {
+    color: var(--accent-danger);
+}
+
+/* ============================================================
+   FULLCALENDAR THEME OVERRIDES (Dark)
+   ============================================================ */
+
+.fc {
+    --fc-border-color: var(--border-color);
+    --fc-bg-color: var(--bg-primary);
+    --fc-today-bg-color: rgba(99, 102, 241, 0.08);
+    --fc-event-bg-color: #6366f1;
+    --fc-event-border-color: #6366f1;
+    --fc-event-text-color: #ffffff;
+    --fc-neutral-bg-color: var(--bg-secondary);
+    --fc-page-bg-color: var(--bg-primary);
+    --fc-highlight-color: rgba(99, 102, 241, 0.12);
+    --fc-non-business-color: rgba(0, 0, 0, 0.1);
+    --fc-now-indicator-color: var(--accent-danger);
+}
+
+.fc .fc-col-header-cell-cushion,
+.fc .fc-daygrid-day-number {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+.fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+    color: var(--accent-primary);
+    font-weight: 700;
+}
+
+.fc .fc-timegrid-slot-label-cushion {
+    color: var(--text-muted);
+    font-size: var(--font-size-xs);
+}
+
+.fc .fc-timegrid-axis-cushion {
+    color: var(--text-muted);
+}
+
+.fc .fc-daygrid-event {
+    border-radius: 3px;
+    font-size: var(--font-size-xs);
+}
+
+.fc .fc-scrollgrid {
+    border-color: var(--border-color);
+}
+
+.fc th {
+    border-color: var(--border-color);
+}
+
+.fc td {
+    border-color: var(--border-color);
+}
+
+/* ---- FullCalendar Light Theme ---- */
+[data-theme="light"] .fc {
+    --fc-bg-color: var(--bg-primary);
+    --fc-today-bg-color: rgba(99, 102, 241, 0.06);
+    --fc-neutral-bg-color: var(--bg-secondary);
+    --fc-page-bg-color: var(--bg-primary);
+    --fc-highlight-color: rgba(99, 102, 241, 0.1);
+    --fc-non-business-color: rgba(0, 0, 0, 0.03);
+    --fc-border-color: var(--border-color);
+}
+
+[data-theme="light"] .fc .fc-col-header-cell-cushion,
+[data-theme="light"] .fc .fc-daygrid-day-number {
+    color: var(--text-secondary);
+}
+
+/* ============================================================
+   TOAST UI CALENDAR THEME OVERRIDES (Dark)
+   ============================================================ */
+
+.toastui-calendar-layout {
+    background: var(--bg-primary) !important;
+}
+
+.toastui-calendar-month .toastui-calendar-daygrid-cell {
+    border-color: var(--border-color) !important;
+}
+
+.toastui-calendar-day-names .toastui-calendar-day-name-item span {
+    color: var(--text-secondary) !important;
+}
+
+.toastui-calendar-template-monthDayName span {
+    color: var(--text-secondary) !important;
+}
+
+.toastui-calendar-grid-cell-header .toastui-calendar-template-monthGridHeader {
+    color: var(--text-secondary) !important;
+}
+
+.toastui-calendar-weekday-grid .toastui-calendar-grid-cell-date {
+    color: var(--text-secondary) !important;
+}
+
+.toastui-calendar-panel:not(.toastui-calendar-time) {
+    border-color: var(--border-color) !important;
+}
+
+.toastui-calendar-popup-container {
+    background: var(--bg-elevated) !important;
+    border: 1px solid var(--border-light) !important;
+    border-radius: var(--radius-md) !important;
+    color: var(--text-primary) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.toastui-calendar-popup-container input {
+    background: rgba(255, 255, 255, 0.06) !important;
+    border: 1px solid var(--border-light) !important;
+    color: var(--text-primary) !important;
+}
+
+.toastui-calendar-see-more-container {
+    background: var(--bg-elevated) !important;
+    border: 1px solid var(--border-light) !important;
+}
+
+/* ---- TOAST UI Light Theme ---- */
+[data-theme="light"] .toastui-calendar-layout {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="light"] .toastui-calendar-popup-container {
+    background: var(--bg-surface) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
+}
+
+[data-theme="light"] .toastui-calendar-popup-container input {
+    background: rgba(0, 0, 0, 0.04) !important;
+    color: var(--text-primary) !important;
+}
+
+/* ============================================================
+   DAYPILOT THEME OVERRIDES (Dark)
+   ============================================================ */
+
+.calendar_default_main,
+.month_default_main {
+    border-color: var(--border-color) !important;
+    font-family: var(--font-family) !important;
+}
+
+.calendar_default_cell_inner,
+.month_default_cell_inner {
+    background: var(--bg-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.month_default_cell_header,
+.calendar_default_colheader_inner {
+    background: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.calendar_default_rowheader_inner {
+    background: var(--bg-secondary) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
+.month_default_event_inner,
+.calendar_default_event_inner {
+    background: #6366f1 !important;
+    color: #ffffff !important;
+    border-radius: 3px !important;
+    font-size: var(--font-size-xs) !important;
+    border: none !important;
+}
+
+.month_default_cell_header_inner {
+    color: var(--text-secondary) !important;
+}
+
+.calendar_default_corner_inner {
+    background: var(--bg-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.calendar_default_cell_business .calendar_default_cell_inner {
+    background: var(--bg-primary) !important;
+}
+
+/* ---- DayPilot Light Theme ---- */
+[data-theme="light"] .calendar_default_cell_inner,
+[data-theme="light"] .month_default_cell_inner {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="light"] .month_default_cell_header,
+[data-theme="light"] .calendar_default_colheader_inner,
+[data-theme="light"] .calendar_default_rowheader_inner,
+[data-theme="light"] .calendar_default_corner_inner {
+    background: var(--bg-secondary) !important;
+}
+
+/* ============================================================
+   DHTMLX SCHEDULER THEME OVERRIDES (Dark)
+   ============================================================ */
+
+.dhx_cal_container {
+    background: var(--bg-primary) !important;
+    font-family: var(--font-family) !important;
+}
+
+.dhx_cal_navline {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dhx_cal_header {
+    background: var(--bg-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.dhx_cal_header .dhx_scale_bar {
+    color: var(--text-secondary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dhx_cal_data {
+    background: var(--bg-primary) !important;
+}
+
+.dhx_cal_data .dhx_scale_holder {
+    border-color: var(--border-color) !important;
+}
+
+.dhx_cal_data .dhx_scale_hour {
+    background: var(--bg-secondary) !important;
+    color: var(--text-muted) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dhx_month_head {
+    color: var(--text-secondary) !important;
+}
+
+.dhx_after .dhx_month_head,
+.dhx_before .dhx_month_head {
+    color: var(--text-muted) !important;
+}
+
+.dhx_month_body {
+    background: var(--bg-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+.dhx_after .dhx_month_body,
+.dhx_before .dhx_month_body {
+    background: var(--bg-secondary) !important;
+}
+
+.dhx_cal_event .dhx_body,
+.dhx_cal_event .dhx_title {
+    background: #6366f1 !important;
+    color: #ffffff !important;
+}
+
+.dhx_cal_event_line {
+    background: #6366f1 !important;
+    color: #ffffff !important;
+    border-radius: 3px !important;
+}
+
+.dhx_now .dhx_month_head {
+    color: var(--accent-primary) !important;
+    font-weight: 700;
+}
+
+.dhx_cal_date {
+    color: var(--text-primary) !important;
+}
+
+.dhx_cal_tab, .dhx_cal_today_button {
+    color: var(--text-secondary) !important;
+}
+
+.dhx_cal_prev_button, .dhx_cal_next_button {
+    color: var(--text-secondary) !important;
+}
+
+/* ---- DHTMLX Light Theme ---- */
+[data-theme="light"] .dhx_cal_container {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="light"] .dhx_cal_navline,
+[data-theme="light"] .dhx_cal_header {
+    background: var(--bg-secondary) !important;
+}
+
+[data-theme="light"] .dhx_cal_data {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="light"] .dhx_month_body {
+    background: var(--bg-primary) !important;
+}
+
+[data-theme="light"] .dhx_after .dhx_month_body,
+[data-theme="light"] .dhx_before .dhx_month_body {
+    background: var(--bg-secondary) !important;
+}
