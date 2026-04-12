@@ -6,7 +6,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Add
-import androidx.compose.material.icons.outlined.CreateNewFolder
+import androidx.compose.material.icons.filled.FolderOpen
 import androidx.compose.material.icons.outlined.Delete
 import androidx.compose.material.icons.outlined.Edit
 import androidx.compose.material3.*
@@ -103,7 +103,7 @@ fun RollDetailScreen(
                 },
                 actions = {
                     IconButton(onClick = onAddSubRoll) {
-                        Icon(Icons.Outlined.CreateNewFolder, contentDescription = "Add Sub-Roll")
+                        Icon(Icons.Filled.FolderOpen, contentDescription = "Add Sub-Roll")
                     }
                     IconButton(onClick = onEditRoll) {
                         Icon(Icons.Outlined.Edit, contentDescription = "Edit Roll")

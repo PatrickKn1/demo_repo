@@ -4,8 +4,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.outlined.Cloud
-import androidx.compose.material.icons.outlined.PhoneAndroid
+import androidx.compose.material.icons.filled.CloudUpload
+import androidx.compose.material.icons.filled.Phone
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -65,7 +65,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        imageVector = Icons.Outlined.PhoneAndroid,
+                        imageVector = Icons.Filled.Phone,
                         contentDescription = null,
                         tint = if (storageMode == "local")
                             MaterialTheme.colorScheme.primary
@@ -110,7 +110,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        imageVector = Icons.Outlined.Cloud,
+                        imageVector = Icons.Filled.CloudUpload,
                         contentDescription = null,
                         tint = if (storageMode == "google")
                             MaterialTheme.colorScheme.primary
@@ -155,7 +155,7 @@ fun SettingsScreen(onBack: () -> Unit) {
                 )
             }
 
-            HorizontalDivider(modifier = Modifier.padding(vertical = 8.dp))
+            Divider(modifier = Modifier.padding(vertical = 8.dp))
 
             Text(
                 text = "About",

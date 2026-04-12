@@ -6,7 +6,7 @@ import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.FilterList
+import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -26,6 +26,7 @@ enum class SortOrder(val label: String) {
     PROFIT_ASC("Worst first")
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun FilterBar(
     profitFilter: ProfitFilter,
@@ -43,7 +44,7 @@ fun FilterBar(
             modifier = Modifier.align(Alignment.End)
         ) {
             Icon(
-                imageVector = Icons.Outlined.FilterList,
+                imageVector = Icons.Filled.List,
                 contentDescription = "Filters",
                 modifier = Modifier.size(18.dp)
             )
