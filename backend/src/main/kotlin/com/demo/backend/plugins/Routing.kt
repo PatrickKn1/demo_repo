@@ -3,7 +3,8 @@ package com.demo.backend.plugins
 import com.demo.backend.routes.healthRoutes
 import com.demo.backend.routes.mathRoutes
 import com.demo.backend.routes.graphRoutes
-import com.demo.backend.routes.dataRoutes
+import com.demo.backend.routes.rollRoutes
+import com.demo.backend.routes.entryRoutes
 import io.ktor.server.application.*
 import io.ktor.server.routing.*
 
@@ -12,6 +13,7 @@ fun Application.configureRouting() {
         healthRoutes()
         mathRoutes()
         graphRoutes()
-        dataRoutes()
+        rollRoutes()
+        entryRoutes()
     }
 }

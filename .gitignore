@@ -42,8 +42,8 @@ google-services.json
 .DS_Store
 Thumbs.db
 
-# Backend data
-data/
+# Backend runtime data
+/data/
 *.db
 
 # Logs
